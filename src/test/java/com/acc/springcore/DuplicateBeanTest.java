@@ -19,4 +19,12 @@ public class DuplicateBeanTest {
         Assertions.assertSame(employee1, employee2);
     }
 
+    @Test
+    void testPrimaryBean(){
+        ApplicationContext context = new AnnotationConfigApplicationContext(DuplicateConfig.class);
+        Employee employee = context.getBean(Employee.class);
+        Employee employee1 = context.getBean("employeeOne", Employee.class);
+        Assertions.assertSame(employee, employee1);
+    }
+
 }
