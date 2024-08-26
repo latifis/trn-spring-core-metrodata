@@ -20,4 +20,5 @@ public class LifeCycleTest {
     void testServer(){
         Server server = context.getBean(Server.class);
     }
+
 }
